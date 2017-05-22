@@ -1,0 +1,44 @@
+<template name="Default">
+	<div class="Main">
+		<h1 class="ui header">Total {{count}}</h1>
+		<div class="Feed">
+			{{ #each feed }}
+			<div class="ui segments Feed__item">
+				<div class="ui segment">
+					<h2>
+						<a target="_blank" href="{{ permalink_url }}">{{ title }}</a>
+					</h2>
+				</div>
+				<div class="ui horizontal segments">
+					<div class="ui segment">
+						updated at: {{ updatedAt }}
+					</div>
+					<div class="ui segment">
+						created at: {{ createdAt }}
+					</div>
+				</div>
+				<div class="ui segment">
+					<span>{{{ description }}}</span>
+				</div>
+				{{ #if attachments }}
+				<div class="ui segment">
+					<div class="Feed__attachments">
+					{{ #each attachments }}
+						<img class="Feed__attachmentItem" src="{{ media.image.src }}" alt="{{ media.description }}">
+					{{ /each }}
+					</div>
+				</div>
+				{{ /if }}
+				<div class="ui horizontal segments Feed__itemBottom">
+					<div class="ui segment">
+							{{ source.name }}
+					</div>
+					<div class="ui segment">
+							{{ source.social}}
+					</div>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+</template>
