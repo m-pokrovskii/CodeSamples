@@ -1,0 +1,67 @@
+<template name="challengeDetails">
+	{{#with challenge}}
+	<div class="challengeDetails">
+		<div class="challengeDetails__body">
+			<div class="challengeDetails__back">
+				<a href="{{pathFor 'index'}}"> <i class="fa fa-arrow-left"></i> Back to community</a>
+			</div>
+			<h1 class="challengeDetails__headline">
+				{{title}}		
+			</h1>
+			<div class="challengeDetails__twoItemsDetails twoItemsDetails">
+				<div class="twoItemsDetails__left">
+					<div class="twoItemsDetails__label">Prize:</div>
+					<div class="twoItemsDetails__value">{{ singlePrice prizes }}</div>
+				</div>
+				<div class="twoItemsDetails__center">
+					<div class="twoItemsDetails__label">Sponsor:</div>
+					<div class="twoItemsDetails__value">{{ host }}</div>
+				</div>
+				<div class="twoItemsDetails__right">
+					<div class="twoItemsDetails__label">Deadline:</div>
+					<div class="twoItemsDetails__value">{{formatDate deadline "MMMM DD, YYYY"}}</div>
+				</div>
+			</div>
+			<div class="challengeDetails__join">
+				{{{ joinButton }}}
+			</div>
+		</div>
+		<div class="challengeDetails__allDetails">
+			<div class="challengeDetails__allDetailsContent">
+				<div class="challengeDetails__allDetailsRow">
+					<div class="challengeDetails__details challengeDetails__allDetailsItem">
+						<h1 class="challengeDetails__allDetailsHeadline">Challenge Details</h1>
+						{{{ autoParagraph details }}}
+					</div>
+				</div>
+				<div class="challengeDetails__allDetailsRow">
+					<div class="challengeDetails__prizes challengeDetails__allDetailsItem">
+						<h1 class="challengeDetails__allDetailsHeadline">Prizes</h1>
+						<ol class="challengeDetails__allDetailsList">
+							{{#each prize in prizes}}
+								<li class="challengeDetails__allDetailsListItem">{{ prize }}</li>
+							{{/each}}
+						</ol>
+					</div>
+					<div class="challengeDetails__criteria challengeDetails__allDetailsItem">
+						<h1 class="challengeDetails__allDetailsHeadline">Judging Criteria</h1>
+						<ol class="challengeDetails__allDetailsList">
+							{{#each crit in criteria}}
+								<li class="challengeDetails__allDetailsListItem">{{crit}}</li>
+							{{/each}}
+						</ol>
+					</div>
+					<div class="challengeDetails__instructions challengeDetails__allDetailsItem">
+						<h1 class="challengeDetails__allDetailsHeadline">Submission Instructions</h1>
+						{{instructions}}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div data-js="openAllDetails" class="challengeDetails__showMore">
+			<span class="challengeDetails__showMoreText">Challenge Details</span> 
+			<i class="fa fa-caret-up"></i>
+		</div>
+	</div>
+	{{/with}}
+</template>

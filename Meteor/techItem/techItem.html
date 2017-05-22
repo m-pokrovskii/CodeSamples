@@ -1,0 +1,42 @@
+<template name="techItem">
+	<div class="techItem techListing__tech">
+		<div class="techItem__votes">
+			<div class="vote {{#if isVoted}} -voted {{/if}}">
+				<div class="vote__up">
+					<i class="fa fa-caret-up link"></i>
+				</div>
+				<div class="vote__count">{{ votes }}</div>
+			</div>
+		</div>
+		{{#if thumbnail}}
+			<div class="techItem__thumb">
+					<img class="techItem__thumbImage" src="{{thumbnail}}" alt="">
+			</div>
+		{{/if}}
+		<div class="techItem__main">
+			<header class="techItem__header">
+				<div class="techItem__headline">
+					<a href="{{techUrl}}">{{trunc name 95}}</a>
+				</div>
+				<div class="techItem__tag">
+					<div class="tag -tech" style="background: {{tag.color}};">{{tag.name}}</div>
+				</div>
+			</header>
+			<div class="techItem__details">
+				{{trunc tagline 200}}
+			</div>
+			<div class="techItem__controls">
+				{{# if canUpdateTech }}
+				<div class="techItem__editTech">
+					<a class="techItem__editTechLink" href="#">Edit</a>
+				</div>
+				{{/if}}
+				{{# if canDeleteTech }}
+				<div class="techItem__deleteTech">
+					<a class="techItem__deleteTechLink" href="#">Delete</a>
+				</div>
+				{{/if}}
+			</div>
+		</div>
+	</div>
+</template>

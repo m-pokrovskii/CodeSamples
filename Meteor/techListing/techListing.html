@@ -1,0 +1,13 @@
+<template name="techListing">
+	<section class="techListing">
+		<header class="techListing__header">
+			<h1 class="techListing__headline">IDEAS</h1>	
+				<button data-mfp-src=".addTechModal" class="btn techListing__addTechButton">Share a technology</button>
+		</header>	
+		<div class="techListing__techs">
+			{{#each techs}}
+				{{> techItem}}
+			{{/each}}
+		</div>
+	</section>
+</template>

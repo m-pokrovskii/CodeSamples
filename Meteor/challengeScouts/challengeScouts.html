@@ -1,0 +1,30 @@
+<template name="challengeScouts">
+	<section class="ChallengeScouts">
+		<h1 class="ChallengeScouts__headline">Scouts</h1>
+		<div class="ScoutList ChallengeScouts__list">
+			{{#each scouts}}
+			<div class="ScoutItem ScoutList__item">
+				<div class="ScoutItem__avatar avatar">
+					{{> avatar userId=_id shape="circle"}}
+				</div>
+				<div class="ScoutItem__details">
+					<div class="ScoutItem__name">
+						<a href="/profile/{{username}}">{{ scoutUserName }}</a>
+					</div>
+					<div class="ScoutItem__position">{{ profile.headline }}</div>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+		{{#if currentUser }}
+			<div class="ChallengeScouts__invite">
+				<a class="ChallengeScouts__inviteLink" data-js="sendInvite" href="#">
+					{{> svg class="svg-icon--addPeople test-class" src="/svg/group-add.svg" }}
+					Refer Someone
+				</a>
+				{{> InviteFormPopup}}
+			</div>
+		{{/if}}
+		<div class="ChallengeScouts__copyright">©2016 Technium. All Rights Reserved.</div>
+	</section>
+</template>

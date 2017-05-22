@@ -1,0 +1,192 @@
+.Cinema_imageCover{
+  position: absolute; width: 100%; height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.65) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+  }
+
+.Cinema__postImage {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 18px;
+  height: 299px;
+  img {
+    display: block;
+    max-width: none;
+    width: auto;
+    min-width: 100%;
+    height: auto;
+    min-height: 100%;
+    }
+  }
+
+.Cinema__postTitle {
+  position: absolute; bottom: 18px; left: 23px;
+  font: normal 41px/41px 'Plak BlackCondensed';
+  text-transform: uppercase;
+  width: 285px;
+  color: #FFF;
+  &:hover {
+    color: #FFF;
+    }
+  }
+
+.Cinema__postVideoDuration {
+  position: absolute; bottom: 20px; right: 24px;
+  font: normal 20px/1 'Plak BlackCondensed';
+  color: #FFF;
+  }
+
+.Cinema__postContent {
+  font: normal 16px/20px 'Sentinel-Medium';
+  padding-right: 25px;
+  @media (width < 768px) {
+    padding-left: 20px;
+    padding-right: 20px;
+    }
+  }
+
+.Cinema__watchNowLink {
+  font: bold 10px "Sentinel";
+  color: #acacac;
+  text-transform: uppercase;
+  white-space: nowrap;
+  &:hover {
+    color: #acacac;
+    }
+  }
+
+.Cinema__loadMore {
+  text-align: center;
+  margin-bottom: 280px;
+  @media (width <= 768px) {
+    margin-bottom: 160px;
+    }
+  }
+
+.btn-theme-cinema-load-more {
+  outline: none;
+  transition: all 0.1s;
+  display: inline-block;
+  font: normal 22.5px/50px 'Plak BlackCondensed';
+  background: #FFF;
+  border: 1px solid #000;
+  color: #000;
+  text-transform: uppercase;
+  padding: 0 45px;
+  &:hover {
+    color: #FFF;
+    background: #000;
+    svg path,
+    svg rect{
+      fill: #fff;
+      }
+    }
+  }
+
+.WrapVideoSlider {
+  position: relative;
+  overflow: hidden;
+  width: 1140px;
+  margin: 0 auto;
+  @media (width <= 768px) {
+    width: 710px;
+    }
+  @media (width < 768px) {
+    width: 100%;
+    }
+  }
+
+.VideoSlider {
+  position: relative;
+  background: #000;
+  .VideoSlider__iframeHandler, iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    }
+  }
+
+.WrapVideoSlider:hover {
+  .VideoSlider__nextSlide.-isYoutubePlaying {
+    right: 5%;
+    }
+  .VideoSlider__prevSlide.-isYoutubePlaying {
+    left: 5%;
+    }
+  }
+
+  .VideoSlider__iframeHandler {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    z-index: 1;
+    }
+
+
+
+.VideoSlider__description {
+  font: 16px "Sentinel-Medium";
+  color: #FFF;
+  margin: 25px;
+  text-align: center;
+  p {
+    margin: 0;
+    }
+  @media ( width < 768px ) {
+    margin: 20px;
+    }
+  }
+
+  .VideoSlider__descriptionContent {
+    height: 40px;
+    overflow: hidden;
+    @media (width < 768px) {
+      height: auto;
+      }
+    }
+
+.VideoSlider__iframe {
+  position: relative;
+  padding-bottom: 34.386%;
+  height: 0;
+  overflow: hidden;
+  @media (width <= 768px) {
+    padding-bottom: 48.55%;
+    }
+  }
+
+.VideoSlider__nextSlide,
+.VideoSlider__prevSlide {
+  position: absolute; top: 0;
+  cursor: pointer;
+  width: 17px;
+  height: 51px;
+  transition: all 1s;
+  @media (width < 768px) {
+    height: 30px;
+    }
+  }
+.VideoSlider__nextSlide {
+  right: 5%;
+  background: url(library/images/rei_arrow_right.png) no-repeat;
+  background-size: contain;
+  &.-isYoutubePlaying {
+    right: -5%;
+    }
+  }
+
+.VideoSlider__prevSlide {
+  left: 5%;
+  background: url(library/images/rei_arrow_left.png) no-repeat;
+  background-size: contain;
+  &.-isYoutubePlaying {
+    left: -5%;
+    }
+  }
+
+.VideoSlider__nextSlideArrow,
+.VideoSlider__prevSlideArrow {
+  width: 17px;
+  height: 51px;
+  }
